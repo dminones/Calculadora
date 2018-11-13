@@ -19,3 +19,20 @@ function sumarDosNumeros() {
     resultado = sumar(resultado,numeroA);
     actualizarResultado();
 }
+
+var input = ""
+
+function press(num) {
+    input += num;
+    actualizarInput()
+}
+
+function actualizarInput() {
+    document.getElementById("input").value = input
+    document.getElementById("input").innerHTML = input
+}
+
+function cambioInput(value) {
+    console.log(value)
+    input = value
+}
