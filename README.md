@@ -2,7 +2,7 @@
 
 La idea de este proyecto es aprender a usar y pensar aplicaciones javascript mientras hacemos una calculadora.
 
-## Códugo
+## Código
 
 El contenido de este proyecto esta organizado en los siguientes pasos
 
