@@ -1,38 +1,26 @@
+var display = '';
+var valorAnterior = ''
 
-var resultado = 0;
-function actualizarResultado() {
-    document.getElementById("resultado").innerHTML = resultado;
-}
-actualizarResultado();
-
-function reset() {
-    resultado = 0;
-    actualizarResultado();
+window.onload = function() {
+    actualizarDisplay();
 }
 
-function sumar(a,b){
-    return a + b;
+function actualizarDisplay(){
+    document.getElementById("display").innerHTML = display
 }
 
-function sumarDosNumeros() {
-    var numeroA = parseInt(prompt("ingrese un numero"));
-    resultado = sumar(resultado,numeroA);
-    actualizarResultado();
+function presionarNumero(numero){
+    display += numero
+    actualizarDisplay()
 }
 
-var input = ""
-
-function press(num) {
-    input += num;
-    actualizarInput()
+function presionarAC() {
+    display = ''
+    actualizarDisplay()
 }
 
-function actualizarInput() {
-    document.getElementById("input").value = input
-    document.getElementById("input").innerHTML = input
-}
-
-function cambioInput(value) {
-    console.log(value)
-    input = value
+function presionarSuma() {
+    valorAnterior = display;
+    display=''
+    actualizarDisplay()
 }

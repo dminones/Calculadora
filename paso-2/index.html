@@ -1,135 +1,45 @@
 <html>
-    <head>
-        <style>
-            body {
-                margin:0;
-                padding:0;
-            }
-
-            .calculadora {
-                width: 100%;
-                margin: 0 auto;
-            }
-
-            .buttons {
-                display: flex;
-            }
-
-            .buttons .principal {
-                flex-basis: 75%;
-                display:flex;
-                flex-direction: column
-            }
-            
-            .buttons .operaciones {
-                flex-basis: 25%;
-                display: flex;
-                flex-direction: column;
-            }
-
-            .buttons .operaciones-especiales,
-            .buttons .numeros-final,
-            .buttons .numeros {
-                display: flex;
-                flex-direction: row-reverse;
-                flex-wrap: wrap
-            }
-
-            .buttons .operaciones-especiales button {
-                flex: 0 1 auto
-            }
-
-            .buttons .numeros button,
-            .buttons .operaciones-especiales button,
-            .buttons .numeros-final button
-            {
-                flex-basis: 33.33%;
-            }
-
-            .buttons button {
-                height: 70px;
-                border:0.5px solid #ccc;
-                cursor: pointer;
-            }
-            
-            button.double{
-                flex-basis: 66.66% !important;
-            }
-            
-            #input {
-                width: 90%;
-                font-size: 40px;
-                text-align: right;
-                background: black;
-                color:white;
-                padding:5%
-            }
-
-            input {
-                background: transparent;
-                border:none;
-                font-size: 40px;
-                color:white;
-                text-align: right;
-                width: 100%;
-            }
-
-            input[type='number'] {
-                -moz-appearance:textfield;
-            }
-
-            input::-webkit-outer-spin-button,
-            input::-webkit-inner-spin-button {
-                -webkit-appearance: none;
-            }
-
-            .orange{
-                background: orange
-            }
-
-            .dark-grey {
-                background: darkgray
-            }
-
-        </style>
-    </head>
-    <body>
-        <div class="calculadora">
-            
-            <div id="input">00</div>
-            <div class="buttons">
-                <div class="principal">
-                    <div class="operaciones-especiales">
-                        <button class="dark-grey">%</button>
-                        <button class="dark-grey">+/-</button>
-                        <button class="dark-grey">C</button>        
-                    </div>
-                    <div class="numeros">
-                            <button class="order-9" onclick="press(9)" style="order:9">1</button>
-                            <button class="order-8" onclick="press(8)" style="order:8">8</button>
-                            <button class="order-7" onclick="press(7)" style="order:7">7</button>
-                            <button class="order-6" onclick="press(6)" style="order:6">6</button>
-                            <button class="order-5" onclick="press(5)" style="order:5">5</button>
-                            <button class="order-4" onclick="press(4)" style="order:4">4</button>
-                            <button class="order-3" onclick="press(3)" style="order:3">3</button>
-                            <button class="order-2" onclick="press(2)" style="order:2">2</button>
-                            <button class="order-1" onclick="press(1)" style="order:1">1</button>
-                    </div>
-                    <div class="numeros-final">
-                        <button class="order-9" onclick="press('.')">,</button>
-                        <button class="order-9 double" onclick="press(0)" >0</button>        
-                    </div>
-                </div>
-                <div class="operaciones">
-                    <button class="orange">/</button>
-                    <button class="orange">*</button>
-                    <button class="orange">-</button>
-                    <button class="orange">+</button>
-                    <button class="orange">=</button>
-                </div>
-                
-            </div>
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body class="flexbox-base">
+  <div class="calculadora">
+    <div class="visor">
+      <div class="visor__input" id="display"></div>
+    </div>
+    <div class="botones flexbox-base">
+      <div class="flexbox-base botones__contenedor">
+        <div class="flexbox-base operadores--especiales"> 
+          <button class="boton">(</button>
+          <button class="boton">)</button>  
+          <button class="boton">%</button>
         </div>
-        <script src="main.js"></script>
-    </body>
+        <div class="flexbox-base operadores--numeros">
+          <button onclick="presionarNumero(9)" class="boton">9</button>
+          <button onclick="presionarNumero(8)" class="boton">8</button>
+          <button onclick="presionarNumero(7)" class="boton">7</button>
+          <button onclick="presionarNumero(6)" class="boton">6</button>
+          <button onclick="presionarNumero(5)" class="boton">5</button>
+          <button onclick="presionarNumero(4)" class="boton">4</button>
+          <button onclick="presionarNumero(3)" class="boton">3</button>
+          <button onclick="presionarNumero(2)" class="boton">2</button>
+          <button onclick="presionarNumero(1)" class="boton">1</button>
+          <button onclick="presionarNumero('.')" class="boton">.</button>
+          <button onclick="" class="boton">=</button>
+          <button onclick="presionarNumero(0)" class="boton">0</button>
+        </div>
+      </div>
+      <div class="flexbox-base operadores--basicos">
+          <button onclick="presionarAC()" class="boton">AC</button>
+          <button class="boton">/</button>
+          <button class="boton">X</button>
+          <button class="boton">-</button>
+          <button onclick="presionarSuma()" class="boton">+</button>
+        </div>
+    </div>
+  </div>
+  <script src="main.js" ></script>  
+</body>
 </html>
