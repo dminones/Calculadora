@@ -12,8 +12,8 @@
     <div class="botones flexbox-base">
       <div class="flexbox-base botones__contenedor">
         <div class="flexbox-base operadores--especiales"> 
-          <button class="boton">(</button>
-          <button class="boton">)</button>  
+          <button onclick="presionarAC()" class="boton">C</button>
+          <button class="boton">+/-</button>  
           <button class="boton">%</button>
         </div>
         <div class="flexbox-base operadores--numeros">
@@ -27,17 +27,16 @@
           <button onclick="presionarNumero(2)" class="boton">2</button>
           <button onclick="presionarNumero(1)" class="boton">1</button>
           <button onclick="presionarNumero('.')" class="boton">.</button>
-          <button onclick="" class="boton">=</button>
-          <button onclick="presionarNumero(0)" class="boton">0</button>
+          <button onclick="presionarNumero(0)" class="boton doble">0</button>
         </div>
       </div>
       <div class="flexbox-base operadores--basicos">
-          <button onclick="presionarAC()" class="boton">AC</button>
           <button class="boton">/</button>
           <button class="boton">X</button>
           <button class="boton">-</button>
           <button onclick="presionarSuma()" class="boton">+</button>
-        </div>
+          <button class="boton">=</button>
+      </div>
     </div>
   </div>
   <script src="main.js" ></script>  

@@ -2,6 +2,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #eeeeeea3;
 }
 
 .flexbox-base {
@@ -13,16 +14,10 @@ body {
 
 .calculadora {
   width: 300px;
-  /* height: 600px; */
-  background-color: red;
-  /* position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
+  background-color: black;
 }
 
 .visor {
-  background-color: green;
   width: 100%;
 }
 
@@ -56,4 +51,8 @@ body {
   background-color: silver;
   border: 1px solid gray;
   box-sizing: border-box;
+}
+
+.boton.doble {
+  width: 150px
 }

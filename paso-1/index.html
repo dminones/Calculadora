@@ -7,13 +7,13 @@
 <body class="flexbox-base">
   <div class="calculadora">
     <div class="visor">
-      <input class="visor__input" type="text">
+      <div class="visor__input" id="display"></div>
     </div>
     <div class="botones flexbox-base">
       <div class="flexbox-base botones__contenedor">
         <div class="flexbox-base operadores--especiales"> 
-          <button class="boton">(</button>
-          <button class="boton">)</button>  
+          <button class="boton">C</button>
+          <button class="boton">+/-</button>  
           <button class="boton">%</button>
         </div>
         <div class="flexbox-base operadores--numeros">
@@ -27,17 +27,16 @@
           <button class="boton">2</button>
           <button class="boton">1</button>
           <button class="boton">.</button>
-          <button class="boton">=</button>
-          <button class="boton">0</button>
+          <button class="boton doble">0</button>
         </div>
       </div>
       <div class="flexbox-base operadores--basicos">
-          <button class="boton">AC</button>
           <button class="boton">/</button>
           <button class="boton">X</button>
           <button class="boton">-</button>
           <button class="boton">+</button>
-        </div>
+          <button class="boton">=</button>
+      </div>
     </div>
   </div>  
 </body>
