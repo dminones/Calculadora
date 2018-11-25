@@ -3,6 +3,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #eeeeeea3;
+  font-family: 'Roboto', sans-serif;
 }
 
 .flexbox-base {
@@ -15,6 +16,7 @@ body {
 .calculadora {
   width: 280px;
   background-color: black;
+  border-radius: 5px;
 }
 
 .visor {
@@ -70,6 +72,11 @@ body {
   color: white;
   border: none;
   box-sizing: border-box;
+  font-size: 18px;
+}
+
+.boton:focus{
+  outline: 0
 }
 
 .operadores--especiales .boton{
