@@ -7,13 +7,13 @@ body {
 
 .flexbox-base {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-around;
   flex-direction: row;
+  text-align: center;
 }
 
 .calculadora {
-  width: 300px;
+  width: 280px;
   background-color: black;
 }
 
@@ -29,13 +29,18 @@ body {
   min-height: 47px;
 }
 
-.botones {
-  background-color: blue;
-}
-
 .botones__contenedor,
 .operadores--basicos {
   flex-direction: column;
+}
+
+.botones__contenedor {
+  width: 75%;
+}
+
+.operadores--basicos{ 
+  width: 25%;
+  align-items: center;
 }
 
 .operadores--especiales,
@@ -47,15 +52,35 @@ body {
   flex-direction: row-reverse;
 }
 
+.boton-container {
+  width: 70px;
+  height: 70px
+}
+
+.boton-container.doble {
+  width: 140px;
+}
+
 .boton {
-  width: 75px;
-  height: 75px;
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
   border: none;
-  background-color: silver;
-  border: 1px solid gray;
+  background-color: #333;
+  color: white;
+  border: none;
   box-sizing: border-box;
 }
 
-.boton.doble {
-  width: 150px
+.operadores--especiales .boton{
+  background-color:#9f9f9f;
+  color: black
+}
+
+.operadores--basicos .boton{
+  background-color:#f69a3c;
+}
+
+.boton-container.doble .boton {
+  width: 120px;
 }
