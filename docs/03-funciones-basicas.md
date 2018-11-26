@@ -29,4 +29,16 @@ function presionarIgual() {
 }
 ```
 
+## Otras operaciones
 
+Las demás operaciones pueden resolverse de manera análoga.
+
+### Una vuelta de rosca
+
+Como podemos hacer para no borrar el display hasta que el usuario empieza a tipear el nuevo numero?
+
+Que pasa al hacer la cuenta si tenemos un valor invalido? Ejemplo un numero con multiples "."
+
+Una calculadora tradicional no deja tipear un valor inválido. Como podríamos resolver esto? 
+
+Si hay una operacion en curso que deberia pasar al presionar una operación?

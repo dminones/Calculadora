@@ -10,6 +10,7 @@ El contenido de este proyecto esta organizado en los siguientes pasos
 
 1. [Paso 1](./paso-1)
 2. [Paso 2](./paso-2)
+2. [Paso 3](./paso-3)
 
 ## Contenido
 
