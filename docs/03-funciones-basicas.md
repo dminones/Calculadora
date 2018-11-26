@@ -33,12 +33,14 @@ function presionarIgual() {
 
 Las demás operaciones pueden resolverse de manera análoga.
 
-### Una vuelta de rosca
+### Ejercicios propuestos
 
+#### Evitar borrar display al presionar operacion 
 Como podemos hacer para no borrar el display hasta que el usuario empieza a tipear el nuevo numero?
+Pista: necesitamos una variable booleana para saber que la proxima vez hay que empezar un numero de cero.
 
+#### Guardar el estado como numero y no string.
 Que pasa al hacer la cuenta si tenemos un valor invalido? Ejemplo un numero con multiples "."
-
 Una calculadora tradicional no deja tipear un valor inválido. Como podríamos resolver esto? 
 
-Si hay una operacion en curso que deberia pasar al presionar una operación?
+#### Si hay una operacion en curso que deberia pasar al presionar una operación?
