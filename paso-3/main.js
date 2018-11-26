@@ -2,6 +2,7 @@
 
 var display = '';
 var valorAnterior = ''
+var operacion;
 
 window.onload = function() {
     actualizarDisplay();
@@ -26,11 +27,26 @@ function presionarAC() {
 function presionarSuma() {
     valorAnterior = display;
     display=''
+    operacion = '+'
     actualizarDisplay()
 }
 
-function presionarIgual() {
-    var resultado = Number(valorAnterior) + Number(display)
+function resolver() {
+    var resultado;
+    switch (operacion) {
+        case '+':
+            resultado = parseFloat(valorAnterior) + parseFloat(display)
+            break;
+    
+        default:
+            console.log("operacion no soportada")
+            break;
+    }
     display = resultado.toString()
+}
+
+function presionarIgual() {
+    console.log("presionar igual")
+    resolver()
     actualizarDisplay()
 }
