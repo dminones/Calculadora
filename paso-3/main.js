@@ -24,13 +24,6 @@ function presionarAC() {
     actualizarDisplay()
 }
 
-function presionarSuma() {
-    valorAnterior = display;
-    display=''
-    operacion = '+'
-    actualizarDisplay()
-}
-
 function resolver() {
     var resultado;
     switch (operacion) {
@@ -53,3 +46,26 @@ function presionarIgual() {
     resolver()
     actualizarDisplay()
 }
+
+function presionarAC() {
+    display = '';
+    valorAnterior = '';
+    operacion ='';
+    actualizarDisplay();
+ }
+ 
+ function presionarOperacion(operacionSelccionada) {
+    if (!(display === '' && valorAnterior === '')) {
+        valorAnterior = parseFloat(display);
+        display = '';
+        operacion = operacionSelccionada;
+        actualizarDisplay();
+    }
+ }
+ 
+ function presionarIgual() {
+    display = parseFloat(display);
+    resolver();
+    operacion = '';
+    actualizarDisplay();
+ }
