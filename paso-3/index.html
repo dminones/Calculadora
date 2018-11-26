@@ -1,0 +1,45 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body class="flexbox-base">
+  <div class="calculadora">
+    <div class="visor">
+      <div class="visor__input" id="display"></div>
+    </div>
+    <div class="botones flexbox-base">
+      <div class="flexbox-base botones__contenedor">
+        <div class="flexbox-base operadores--especiales"> 
+          <div class="boton-container"><button onclick="presionarAC()" class="boton">C</button></div>
+          <div class="boton-container"><button class="boton">+/-</button></div>
+          <div class="boton-container"><button class="boton">%</button></div>
+        </div>
+        <div class="flexbox-base operadores--numeros">
+          <div class="boton-container"><button onclick="presionarNumero(9)" class="boton">9</button></div>
+          <div class="boton-container"><button onclick="presionarNumero(8)" class="boton">8</button></div>
+          <div class="boton-container"><button onclick="presionarNumero(7)" class="boton">7</button></div>
+          <div class="boton-container"><button onclick="presionarNumero(6)" class="boton">6</button></div>
+          <div class="boton-container"><button onclick="presionarNumero(5)" class="boton">5</button></div>
+          <div class="boton-container"><button onclick="presionarNumero(4)" class="boton">4</button></div>
+          <div class="boton-container"><button onclick="presionarNumero(3)" class="boton">3</button></div>
+          <div class="boton-container"><button onclick="presionarNumero(2)" class="boton">2</button></div>
+          <div class="boton-container"><button onclick="presionarNumero(1)" class="boton">1</button></div>
+          <div class="boton-container"><button onclick="presionarNumero('.')" class="boton">.</button></div>
+          <div class="boton-container doble"><button onclick="presionarNumero(0)" class="boton">0</button></div>
+        </div>
+      </div>
+      <div class="flexbox-base operadores--basicos">
+          <div class="boton-container"><button class="boton">/</button></div>
+          <div class="boton-container"><button class="boton">x</button></div>
+          <div class="boton-container"><button class="boton">-</button></div>
+          <div class="boton-container"><button onclick="presionarSuma()" class="boton">+</button></div>
+          <div class="boton-container"><button onclick="presionarIgual()" class="boton">=</button></div>
+      </div>
+    </div>
+  </div>
+  <script src="main.js" ></script>  
+</body>
+</html>

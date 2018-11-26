@@ -1,0 +1,93 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eeeeeea3;
+  font-family: 'Roboto', sans-serif;
+}
+
+.flexbox-base {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  text-align: center;
+}
+
+.calculadora {
+  width: 280px;
+  background-color: black;
+  border-radius: 5px;
+}
+
+.visor {
+  width: 100%;
+}
+
+.visor__input {
+  color: white;
+  text-align: right;
+  font-size: 40px;
+  padding: 20px 5px;
+  min-height: 47px;
+}
+
+.botones__contenedor,
+.operadores--basicos {
+  flex-direction: column;
+}
+
+.botones__contenedor {
+  width: 75%;
+}
+
+.operadores--basicos{ 
+  width: 25%;
+  align-items: center;
+}
+
+.operadores--especiales,
+.operadores--numeros {
+  flex-wrap: wrap;
+}
+
+.operadores--numeros {
+  flex-direction: row-reverse;
+}
+
+.boton-container {
+  width: 70px;
+  height: 70px
+}
+
+.boton-container.doble {
+  width: 140px;
+}
+
+.boton {
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  border: none;
+  background-color: #333;
+  color: white;
+  border: none;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+
+.boton:focus{
+  outline: 0
+}
+
+.operadores--especiales .boton{
+  background-color:#9f9f9f;
+  color: black
+}
+
+.operadores--basicos .boton{
+  background-color:#f69a3c;
+}
+
+.boton-container.doble .boton {
+  width: 120px;
+}
