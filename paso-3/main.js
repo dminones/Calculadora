@@ -37,6 +37,9 @@ function resolver() {
         case '+':
             resultado = parseFloat(valorAnterior) + parseFloat(display)
             break;
+        case '-':
+            resultado = parseFloat(display) - parseFloat(valorAnterior)
+            break;
     
         default:
             console.log("operacion no soportada")
