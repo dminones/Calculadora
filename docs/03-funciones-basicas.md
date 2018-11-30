@@ -29,9 +29,9 @@ function presionarIgual() {
 }
 ```
 
-## Ejercicios propuestos
+### Ejercicios propuestos
 
-### Completar las demas operaciones
+#### Completar las demas operaciones
 Las demás operaciones pueden resolverse de manera análoga.
 
 #### Evitar borrar display al presionar operacion 
