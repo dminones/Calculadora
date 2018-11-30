@@ -29,11 +29,10 @@ function presionarIgual() {
 }
 ```
 
-## Otras operaciones
+## Ejercicios propuestos
 
+### Completar las demas operaciones
 Las demás operaciones pueden resolverse de manera análoga.
-
-### Ejercicios propuestos
 
 #### Evitar borrar display al presionar operacion 
 Como podemos hacer para no borrar el display hasta que el usuario empieza a tipear el nuevo numero?
