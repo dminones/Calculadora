@@ -4,6 +4,11 @@
   <title>Calculadora</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" href="index.css">
+
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
 </head>
 <body class="flexbox-base">
   <div class="calculadora">
@@ -14,8 +19,8 @@
       <div class="flexbox-base botones__contenedor">
         <div class="flexbox-base operadores--especiales"> 
           <div class="boton-container"><button onclick="presionarAC()" class="boton">C</button></div>
-          <div class="boton-container"><button onclick="presionarSigno()" class="boton">+/-</button></div>
-          <div class="boton-container"><button onclick="presionarPorcentaje()" class="boton">%</button></div>
+          <div class="boton-container"><button class="boton">+/-</button></div>
+          <div class="boton-container"><button class="boton">%</button></div>
         </div>
         <div class="flexbox-base operadores--numeros">
           <div class="boton-container"><button onclick="presionarNumero(9)" class="boton">9</button></div>
@@ -32,11 +37,11 @@
         </div>
       </div>
       <div class="flexbox-base operadores--basicos">
-          <div class="boton-container"><button onclick="presionarOperacion('/')"  class="boton">/</button></div>
-          <div class="boton-container"><button onclick="presionarOperacion('*')"  class="boton">*</button></div>
-          <div class="boton-container"><button onclick="presionarOperacion('-')"  class="boton">-</button></div>
-          <div class="boton-container"><button onclick="presionarOperacion('+')" class="boton">+</button></div>
-          <div class="boton-container"><button onclick="presionarIgual()" class="boton">=</button></div>
+          <div class="boton-container"><button class="boton">/</button></div>
+          <div class="boton-container"><button class="boton">x</button></div>
+          <div class="boton-container"><button class="boton">-</button></div>
+          <div class="boton-container"><button class="boton">+</button></div>
+          <div class="boton-container"><button class="boton">=</button></div>
       </div>
     </div>
   </div>

@@ -4,13 +4,6 @@ var display = '';
 var valorAnterior = ''
 var operacion;
 
-window.onload = function() {
-    actualizarDisplay();
-}
-
-function actualizarDisplay(){
-    document.getElementById("display").innerHTML = display
-}
 
 // Funciones que se ejecutan via botones del html
 
@@ -24,31 +17,14 @@ function presionarAC() {
     actualizarDisplay()
 }
 
-function presionarPorcentaje() {
-    console.log("presionarPorcentaje",display)
-    display = (parseFloat(display) * 0.1).toString()
-    actualizarDisplay()
-}
-
-function presionarSigno() {
-    display =  (-parseFloat(display)).toString()
-    actualizarDisplay()
-}
-
 function resolver() {
     var resultado;
     switch (operacion) {
         case '+':
-            resultado = parseFloat(valorAnterior) + parseFloat(display);
+            resultado = parseFloat(valorAnterior) + parseFloat(display)
             break;
         case '-':
-            resultado = parseFloat(valorAnterior) - parseFloat(display);
-            break;
-        case '*':
-            resultado = parseFloat(valorAnterior) * parseFloat(display);
-            break;
-        case '/':
-            resultado = parseFloat(valorAnterior) / parseFloat(display);
+            resultado = parseFloat(display) - parseFloat(valorAnterior)
             break;
         default:
             console.log("operacion no soportada")
@@ -58,6 +34,7 @@ function resolver() {
 }
 
 function presionarIgual() {
+    console.log("presionar igual")
     resolver()
     actualizarDisplay()
 }
@@ -79,8 +56,31 @@ function presionarAC() {
  }
  
  function presionarIgual() {
+     console.log("presionar igual")
     display = parseFloat(display);
     resolver();
     operacion = '';
     actualizarDisplay();
  }
+
+ function actualizarDisplay(){
+    $('#display').html(display)
+}
+
+ $( document ).ready(function() {
+    console.log( "ready!" );
+
+    
+
+    actualizarDisplay();
+    
+    $('.operadores--basicos button').click(function (){
+        var operacion = $(this).html()
+        console.log("click", operacion)
+        if(operacion !== '=') { 
+            presionarOperacion(operacion)
+        } else {
+            presionarIgual()
+        }
+    })
+});
