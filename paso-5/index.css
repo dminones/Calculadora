@@ -29,6 +29,7 @@ body {
   font-size: 40px;
   padding: 20px 5px;
   min-height: 47px;
+  overflow-x: auto
 }
 
 .botones__contenedor,
