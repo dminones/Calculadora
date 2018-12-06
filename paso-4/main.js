@@ -1,8 +1,4 @@
 // Declaración de estado de la aplicación
-// var display = '';
-// var valorAnterior = ''
-// var operacion;
-
 var calculadora = {
     display: '',
     valorAnterior: '',
