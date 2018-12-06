@@ -1,86 +1,96 @@
 // Declaración de estado de la aplicación
+// var display = '';
+// var valorAnterior = ''
+// var operacion;
 
-var display = '';
-var valorAnterior = ''
-var operacion;
+var calculadora = {
+    display: '',
+    valorAnterior: '',
+    operacion: null,
+    valorActual: function() {
+        return parseFloat(this.display)
+    },
+    limpiar: function() {
+        this.display = '';
+    },
+    agregarNumero: function(numero){
+        this.display += numero
+    },
+    calcularPorcentaje: function() {
+        this.display = (this.valorActual() * 0.1).toString()
+    },
+    cambiarSigno: function() {
+        this.display =  (-this.valorActual()).toString()
+    },
+    puedoAgregarOperacion: function () {
+        return !(this.display === '' && this.valorAnterior === '')
+    },
+    operacionPendiente: function(operacion) {
+        if (this.puedoAgregarOperacion()) {
+            this.valorAnterior = this.valorActual();
+            this.display = '';
+            this.operacion = operacion;
+        }
+    },
+    resolver: function () {
+        var resultado;
+        switch (this.operacion) {
+            case '+':
+                resultado = this.valorAnterior + this.valorActual();
+                break;
+            case '-':
+                resultado = this.valorAnterior - this.valorActual();
+                break;
+            case '*':
+                resultado = this.valorAnterior * this.valorActual();
+                break;
+            case '/':
+                resultado = this.valorAnterior / this.valorActual();
+                break;
+            default:
+                console.log("operacion no soportada")
+                break;
+        }
+        this.operacion = '';
+        this.display = resultado.toString()
+    }
+}
 
 window.onload = function() {
     actualizarDisplay();
 }
 
 function actualizarDisplay(){
-    document.getElementById("display").innerHTML = display
+    document.getElementById("display").innerHTML = calculadora.display
 }
 
 // Funciones que se ejecutan via botones del html
-
 function presionarNumero(numero){
-    display += numero
-    actualizarDisplay()
-}
-
-function presionarAC() {
-    display = ''
+    calculadora.agregarNumero(numero)
     actualizarDisplay()
 }
 
 function presionarPorcentaje() {
-    console.log("presionarPorcentaje",display)
-    display = (parseFloat(display) * 0.1).toString()
+    calculadora.calcularPorcentaje()
     actualizarDisplay()
 }
 
 function presionarSigno() {
-    display =  (-parseFloat(display)).toString()
+    calculadora.cambiarSigno()
     actualizarDisplay()
 }
-
-function resolver() {
-    var resultado;
-    switch (operacion) {
-        case '+':
-            resultado = parseFloat(valorAnterior) + parseFloat(display);
-            break;
-        case '-':
-            resultado = parseFloat(valorAnterior) - parseFloat(display);
-            break;
-        case '*':
-            resultado = parseFloat(valorAnterior) * parseFloat(display);
-            break;
-        case '/':
-            resultado = parseFloat(valorAnterior) / parseFloat(display);
-            break;
-        default:
-            console.log("operacion no soportada")
-            break;
-    }
-    display = resultado.toString()
-}
-
+ 
 function presionarIgual() {
-    resolver()
-    actualizarDisplay()
-}
+    calculadora.resolver();
+    actualizarDisplay();
+ }
 
 function presionarAC() {
-    display = '';
-    valorAnterior = '';
-    operacion ='';
+    calculadora.limpiar()
     actualizarDisplay();
  }
  
- function presionarOperacion(operacionSelccionada) {
-    if (!(display === '' && valorAnterior === '')) {
-        valorAnterior = parseFloat(display);
-        display = '';
-        operacion = operacionSelccionada;
-        actualizarDisplay();
-    }
- }
- 
- function presionarIgual() {
-    display = parseFloat(display);
-    resolver();
-    operacion = '';
+ function presionarOperacion(operacion) {
+    calculadora.operacionPendiente(operacion)
     actualizarDisplay();
  }
