@@ -81,12 +81,22 @@ function presionarSigno() {
 function presionarIgual() {
     calculadora.resolver();
     actualizarDisplay();
- }
+}
 
 function presionarAC() {
     calculadora.limpiar()
     actualizarDisplay();
- }
+}
+
+function crearBoton(texto, data) {
+    var contenedor = $("<div />").addClass("boton-container")
+    var boton = $("<button />")
+    boton.addClass("boton")
+    boton.attr('data-numero', data)
+    boton.html(texto)
+    contenedor.append(boton)
+    return contenedor
+}
 
 $(document).ready(function(){
     $("#boton-ac").click(presionarAC)
@@ -104,13 +114,8 @@ $(document).ready(function(){
     var $contenedorNumeros = $(".operadores--numeros")
 
     for(var i=9; i>=0;i--) {
-        var numero = $("<div />").addClass("boton-container")
-        var boton = $("<button />")
-        boton.addClass("boton")
-        boton.attr('data-numero', i)
-        boton.html(i)
-        numero.append(boton)
-        $contenedorNumeros.append(numero)
+        var botonNumero = crearBoton(i,i)
+        $contenedorNumeros.append(botonNumero)
     }
 
     $(".operadores--numeros button").click(function(e){
