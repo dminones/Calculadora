@@ -88,14 +88,31 @@ function presionarAC() {
     actualizarDisplay();
 }
 
-function crearBoton(texto, data) {
+function crearBoton(dato, clase, callback) {
     var contenedor = $("<div />").addClass("boton-container")
+    if(clase) {
+        contenedor.addClass(clase)
+    }
     var boton = $("<button />")
-    boton.addClass("boton")
-    boton.attr('data-numero', data)
-    boton.html(texto)
+                .addClass("boton")
+                .attr('data-dato', dato)
+                .html(dato)
+                .click(function(e){
+                    var dato = $(e.target).data('dato')
+                    callback(dato)
+                })
     contenedor.append(boton)
     return contenedor
+}
+
+function generarBotones() {
+    var $contenedorNumeros = $(".operadores--numeros")
+    for(var i=9; i>0;i--) {
+        var botonNumero = crearBoton(i, null, presionarNumero)
+        $contenedorNumeros.append(botonNumero)
+    }
+    $contenedorNumeros.append(crearBoton('.', null, presionarNumero))
+    $contenedorNumeros.append(crearBoton(0,'doble', presionarNumero))
 }
 
 $(document).ready(function(){
@@ -111,17 +128,7 @@ $(document).ready(function(){
             presionarOperacion(operacion)
         }
     })
-    var $contenedorNumeros = $(".operadores--numeros")
-
-    for(var i=9; i>=0;i--) {
-        var botonNumero = crearBoton(i,i)
-        $contenedorNumeros.append(botonNumero)
-    }
-
-    $(".operadores--numeros button").click(function(e){
-        var numero = $(e.target).data('numero')
-        presionarNumero(numero)
-    })
+    generarBotones()
 })
  
 function presionarOperacion(operacion) {
