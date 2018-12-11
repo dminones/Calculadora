@@ -62,6 +62,8 @@ function actualizarDisplay(){
 
 // Funciones que se ejecutan via botones del html
 function presionarNumero(numero){
+    console.log("numero",numero)
+
     calculadora.agregarNumero(numero)
     actualizarDisplay()
 }
@@ -85,8 +87,40 @@ function presionarAC() {
     calculadora.limpiar()
     actualizarDisplay();
  }
+
+$(document).ready(function(){
+    $("#boton-ac").click(presionarAC)
+    $("#boton-signo").click(presionarSigno)
+    $("#boton-porcentaje").click(presionarPorcentaje)
+
+    $(".operadores--basicos button").click(function(e){
+        var operacion = $(this).data('operacion')
+        if(operacion == '=') {
+            presionarIgual()
+        } else {
+            presionarOperacion(operacion)
+        }
+    })
+    var $contenedorNumeros = $(".operadores--numeros")
+
+    for(var i=9; i>=0;i--) {
+        var numero = $("<div />").addClass("boton-container")
+        var boton = $("<button />")
+        boton.addClass("boton")
+        boton.attr('data-numero', i)
+        boton.html(i)
+        numero.append(boton)
+        $contenedorNumeros.append(numero)
+    }
+
+    $(".operadores--numeros button").click(function(e){
+        var numero = $(e.target).data('numero')
+        presionarNumero(numero)
+    })
+})
  
- function presionarOperacion(operacion) {
+function presionarOperacion(operacion) {
+    console.log("operacion",operacion)
     calculadora.operacionPendiente(operacion)
     actualizarDisplay();
- }
+}
