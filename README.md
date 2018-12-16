@@ -26,3 +26,9 @@ El contenido de este proyecto esta organizado en los siguientes pasos
 6. [Modelando la calculadora en un objeto](./docs/05-objetos.md)
 7. [Usando jquery para manejo del DOM](./docs/06-jquery.md)
 8. [Calculadora con memoria]
+
+## Como hacer un pull request
+
+1. Hacer fork de este repositorio
+2. Hacer los cambios para el issue que corresponde
+3. Crear PR
